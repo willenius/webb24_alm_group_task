@@ -4,7 +4,7 @@
 
 Detta är en gruppuppgift för kursen Applikationslivscykelhantering på Nackademin.
 **Gruppstorlek:** 2 - 4 personer
-**Datum:** 2025-05-22
+**Datum:** 2025-05-23
 **Tid:** 09:00 - 17:00
 
 ## Instruktioner
