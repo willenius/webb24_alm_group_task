@@ -1,49 +1,53 @@
-# WEBB24 Aplication Lifecycle Management: Group task  
+# WEBB24 ALM: Gruppuppgift
 
-## Description
+## Beskrivning
 
-This is a group task for the course Application Lifecycle Management at Nackademin.
-**Group size:** 2 - 4 people
-**Date:** 2025-05-22
-**Time:** 09:00 - 17:00
+Detta är en gruppuppgift för kursen Applikationslivscykelhantering på Nackademin.
+**Gruppstorlek:** 2 - 4 personer
+**Datum:** 2025-05-22
+**Tid:** 09:00 - 17:00
 
+## Instruktioner
 
-## Instructions
-The group is tasked with forking this repository setting up the project with the necessary tools and technologies.
+Gruppen ska forka detta repository och sätta upp projektet med nödvändiga verktyg och teknologier.
 
-### Technologies
-- Git - for version control
-- GitHub - for version control and Actions
-- Docker - for containerization
+### Teknologier
 
+- Git - för versionshantering
+- GitHub - för versionshantering och Actions
+- Docker - för containerisering
 
-### Code
+### Kod
 
-- Express - for the API
-- SQLite - for the database
-- Sequelize - for the database ORM
-- Jest - for testing the models
+- Express - för API:et
+- SQLite - för databasen
+- Sequelize - för databas ORM
+- Jest - för testning av modeller
 
+### Uppgifter
 
-### Tasks
-Of the ones below the group has to complete the following tasks. Evryone in the group has to contribute to the code. This will be done by having a single repo with multiple contributors. And creating prs for each new feature.
+Av de nedanstående uppgifterna måste gruppen slutföra följande. Alla i gruppen måste bidra till koden. Detta kommer att göras genom att ha ett enda repo med flera bidragsgivare. Och skapa pull requests för varje ny funktion.
 
-**Required tasks**
-- [ ] **The code will have its tests run with GitHub Actions**
-- [ ] **The code will be dockerized using a Dockerfile**
-- [ ] **Accomodation model will have a address, city, country, zipCode, rent, rooms and possibly userId (needs tests)**
-- [ ] **User model will enforce unique email and username and validate email format (needs tests)**
-- [ ] **User model will have a profilePicture field that is a url to an image (needs tests)**
-- [ ] **Accomodation model will be CASCADE deleted when the user is deleted (needs tests)**
+**Obligatoriska uppgifter**
 
-### Individual tasks for VG
-If you are not the repo owner fork the repo to your own GitHub account and make the following changes. If you are just continue with the tasks below:
-- [ ] **Update the database to use PostgreSQL**
-- [ ] **Update the code to use PostgreSQL**
-- [ ] **Create a docker-compose.yml file to start the application with PostgreSQL**
-- [ ] **deploy locally with docker compose**
+- [ ] **Koden kommer att ha sina tester köra med GitHub Actions**
+- [ ] **Koden kommer att containeriseras med en Dockerfile**
+- [ ] **Accomodation model ska ha en adress, stad, land, postnummer, hyra, rum och eventuellt userId (behöver tester)**
+- [ ] **User model ska tvinga unik e-post och användarnamn samt validera e-postformat (behöver tester)**
+- [ ] **User model ska ha ett profilbildsfält som är en url till en bild (behöver tester)**
+- [ ] **Accomodation model ska CASCADE-raderas när användaren raderas (behöver tester)**
 
-*docker/docker-compose.yml*
+### Individuella uppgifter för VG
+
+Om du inte är repo-ägaren, forka repot till ditt eget GitHub-konto och gör följande ändringar. Om du är det, fortsätt bara med uppgifterna nedan:
+
+- [ ] **Uppdatera databasen för att använda PostgreSQL**
+- [ ] **Uppdatera koden för att använda PostgreSQL**
+- [ ] **Skapa en docker-compose.yml-fil för att starta applikationen med PostgreSQL**
+- [ ] **distribuera lokalt med docker compose**
+
+_docker/docker-compose.yml_
+
 ```
 version: '3.8'
 services:
@@ -76,12 +80,14 @@ volumes:
   pgdata:
 ```
 
-*Deploy locally with docker compose*
+_Distribuera lokalt med docker compose_
+
 ```
 docker compose up ./docker/docker-compose.yml
 ```
 
-*Tear down the application*
+_Stäng ner applikationen_
+
 ```
 docker compose down ./docker/docker-compose.yml
 ```
