@@ -4,7 +4,7 @@
 
 This is a group task for the course Application Lifecycle Management at Nackademin.
 **Group size:** 2 - 4 people
-**Date:** 2025-05-22
+**Date:** 2025-05-23
 **Time:** 09:00 - 17:00
 
 ## Instructions
