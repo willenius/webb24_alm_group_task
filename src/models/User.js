@@ -11,10 +11,13 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
     // unikt användarnamn och utrymme för en profilbild, validate testar så att det är en http.
-    unique: true,
+    unique: true
+  },
+  profilePicture: {
+    type: DataTypes.STRING,
     validate: {
       isUrl: true
-    }
+    },
   },
   email: {
     type: DataTypes.STRING,
