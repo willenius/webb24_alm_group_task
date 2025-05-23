@@ -1,5 +1,6 @@
 const { DataTypes, UniqueConstraintError } = require("sequelize");
 const sequelize = require("../config/database");
+import Accomodation from "./Accomodation";
 
 const User = sequelize.define("User", {
   id: {
@@ -27,5 +28,7 @@ const User = sequelize.define("User", {
     isEmail: true
   },
 });
-
+// skapar relation mellan modellerna där Users kan läggas in i Accomodation modellen,
+// Om en user raderas kommer deras Accomodation också göra det.
+User.hasMany(Accomodation, { foreignKey: "userId" ,onDelete: 'CASCADE' });
 module.exports = User;

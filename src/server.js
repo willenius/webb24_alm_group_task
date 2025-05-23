@@ -1,6 +1,7 @@
 const express = require("express");
 const sequelize = require("./config/database");
 const UserRouter = require("./routes/User");
+const AccomdationRouter = require("./routes/Accomodation")
 
 const app = express();
 const port = process.env.PORT || 5500;
@@ -25,6 +26,7 @@ testConnection();
 
 // Routes
 app.use("/users", UserRouter);
+app.use("/accomadations", AccomdationRouter);
 
 // Start server
 app.listen(port, () => {
