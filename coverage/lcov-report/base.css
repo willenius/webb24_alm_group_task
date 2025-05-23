@@ -39,7 +39,7 @@ a:hover { text-decoration:underline; }
 .clearfix:after {
   content:'';
   display:block;
-  height:0;
+  height:3px;
   clear:both;
   visibility:hidden;
   }
