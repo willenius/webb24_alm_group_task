@@ -11,6 +11,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DB_PATH: ./database.sqlite
+      NODE_ENV: test
+      PORT: 5500
+
 
     steps:
       - uses: actions/checkout@v3
