@@ -26,7 +26,7 @@ testConnection();
 
 // Routes
 app.use("/users", UserRouter);
-app.use("/accomadations", AccomdationRouter);
+app.use("/accomodations", AccomdationRouter);
 
 // Start server
 app.listen(port, () => {
