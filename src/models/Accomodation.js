@@ -32,8 +32,8 @@ const Accomodation = sequelize.define("Accomodation", {
       }
 });
 // skapar en relation mellan modellerna där Accomodation tillhör User modellen
-Accomodation.belongsTo(User, { foreignKey: "userId" });
-User.hasMany(Accomodation, { foreignKey: "userId" ,onDelete: 'CASCADE' });
+Accomodation.belongsTo(User, { foreignKey: "userId", onDelete: 'CASCADE' });
+User.hasMany(Accomodation, { foreignKey: "userId" , });
 
 
 module.exports = Accomodation;

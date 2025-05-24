@@ -1,9 +1,13 @@
-const { Accomodation } = require("../models/Accomodation.js");
+const { Accomodation, User } = require("../test-setup.js")
+
+const dummyUserData = { username: "testuser", email: "test@test.com", profilePicture: "https://wallpapers.com/images/featured/super-roliga-bilder-iduwjp1gpohrve6r.jpg" }
 
 describe("Accomodation model", () => {
     it("should create an accommodation", async () => {
+        const user = await User.create(dummyUserData)
+
         const accommodation = await Accomodation.create({
-            adress: "skönviksvägen", city: "Stockholm", country: "Sweden", postalCode: 12266, roomNr: 4, userId: 1
+            adress: "skönviksvägen", city: "Stockholm", country: "Sweden", postalCode: 12266, roomNr: 4, userId: user.id
         })
 
         expect(Accomodation).toBeDefined();

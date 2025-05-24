@@ -9,6 +9,15 @@ beforeAll(async () => {
   await sequelize.sync();
 });
 
+beforeEach(async () => {
+  await User.destroy({
+    where: {}
+  })
+  await Accomodation.destroy({
+    where: {}
+  })
+})
+
 afterAll(async () => {
   await sequelize.close();
 });
