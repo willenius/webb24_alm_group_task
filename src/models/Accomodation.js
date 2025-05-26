@@ -1,6 +1,6 @@
 const { DataTypes, UniqueConstraintError } = require("sequelize");
 const sequelize = require("../config/database");
-const User = require("./User")
+const User = require("./User");
 
 const Accomodation = sequelize.define("Accomodation", {
     id: {
@@ -10,25 +10,55 @@ const Accomodation = sequelize.define("Accomodation", {
     },
     adress: {
         type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
     },
     city: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
     },
     country: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true
+        }
     },
     postalCode: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            isInt: true
+        },
+        validate: {
+            len: [5,5]
+        },
     },
     rent: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            min: 1
+        },
     },
     roomNr: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate:{
+            min: 1
+        }
     },
     userId: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            min: 1
+        },
       }
 });
 // skapar en relation mellan modellerna där Accomodation tillhör User modellen

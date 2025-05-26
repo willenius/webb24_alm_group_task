@@ -10,7 +10,6 @@ const User = sequelize.define("User", {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
-    // unikt användarnamn och utrymme för en profilbild, validate testar så att det är en http.
     unique: true
   },
   profilePicture: {
@@ -23,13 +22,11 @@ const User = sequelize.define("User", {
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    // sätter email till unik och säkerställer att det är i email format
     unique: true,
-    isEmail: true
+    validate: {
+      isEmail: true
+    }
   },
 });
 
-
-// skapar relation mellan modellerna där Users kan läggas in i Accomodation modellen,
-// Om en user raderas kommer deras Accomodation också göra det.
 module.exports = User;

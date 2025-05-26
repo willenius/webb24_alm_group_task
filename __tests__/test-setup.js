@@ -6,7 +6,7 @@ const Accomodation = require("../src/models/Accomodation")
 // TODO: Add Accomodation model
 
 beforeAll(async () => {
-  await sequelize.sync();
+  await sequelize.sync({force: true});
 });
 
 beforeEach(async () => {
